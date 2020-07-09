@@ -17,10 +17,12 @@ const projects = [
 
   path.resolve(__dirname, '../../dm-yw/app-center/index.html'),
   path.resolve(__dirname, '../../dm-yw/service-supervision/public/index.html'),
-  path.resolve(__dirname, '../../dm-yw/weimo4/public/index.html')
+  path.resolve(__dirname, '../../dm-yw/weimo4/public/index.html'),
+  path.resolve(__dirname, '../../dm-yw/gyt-app/public/index.html'),
+  path.resolve(__dirname, '../../dm-yw/gyt-admin/public/index.html'),
 ]
 const components = {
-  'link-tools': '2.1.0'
+  'link-tools': '2.1.4'
 }
 
 const componentsName = Object.keys(components);
@@ -45,7 +47,7 @@ projects.map(el => {
       })
     }
   })
-  if (newFile != file && autoChange) {
+  if (autoChange && newFile.length > 0 && newFile != file) {
     fs.writeFileSync(el, newFile);
   }
 })
